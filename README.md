@@ -1,3 +1,4 @@
+![image](https://github.com/YaoChen-2021/ECN-Tool/blob/master/graphic%20abstrac-2.tif)
 # Description
 The Eqivalent Carbon Number (ECN) tool was developed to process large-scale lipid data obtained from Astral-MS. This tool integrate the advantages of MS-DIAL (providing precise lipid retention behavior) and LipidSearch (offering accurate MS/MS spectral information). The ECN tool consists of two modules designed to integrate and optimize the functions of the two software platforms. The first module was designed to establish the ECN model based on lipid information processed by MS-DIAL including the lipid information extraction and ECN model construction. The second module removes spurious lipid data from LipidSearch using the ECN model. The additional module 3 is provided herein to be used to compare the results of the two after they have been processed by the ECN model, respectively.
 # User Guide 
