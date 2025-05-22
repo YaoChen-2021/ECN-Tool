@@ -13,11 +13,11 @@ def process_files(input_folder, index_file, output_folder):
             input_df = pd.read_excel(file_path)
             if class_key_column not in input_df.columns or subclass_key_column not in input_df.columns:
                 print(f"Warning: The file {file_name} is missing the ClassKey or SubClassKey columns")
-                continue      
+                continue
+                
+            # Adduct  filtration：the M+H for TG and DG；M+HCOO for all lipids 
             if 'Adduct' in input_df.columns:
                 before_filter = input_df.shape[0]
-                
-                # Adduct  filtration：the M+H for TG and DG；M+HCOO for all lipids 
                 condition_tg_dg_h = (input_df['ClassKey'].isin(['TG', 'DG'])) & (input_df['Adduct'].str.strip() == 'M+H')
                 condition_hcooh = (input_df['Adduct'].str.strip() == 'M+HCOO')
                 combined_condition = condition_tg_dg_h | condition_hcooh
