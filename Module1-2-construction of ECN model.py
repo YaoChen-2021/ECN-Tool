@@ -119,8 +119,7 @@ def process_excel(file_path, output_folder):
     output_file = os.path.join(output_folder, os.path.basename(file_path).replace('.xlsx', '_processed.xlsx'))
     if results:
         results_df = pd.DataFrame(results,
-                                  columns=['Ontology', 'Double bond number', 'X_data', 'Y_data', 'X_R_data',
-                                           'Y_R_data', 'Fit Type', 'Equation', 'R^2'])
+                                  columns=['Ontology', 'Double bond number', 'Fit Type', 'Equation', 'R^2'])
         results_df.to_excel(output_file, sheet_name='Fit Results', index=False)
         print(f"Processed: {os.path.basename(file_path)}, saved: {output_file}")
     else:
